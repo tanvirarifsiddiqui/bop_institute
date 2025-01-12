@@ -8,6 +8,15 @@
 </head>
 <body>
     <h1>Add a Formla</h1>
+    <div>
+        @if($errors->any())
+        <ul>
+            @foreach($errors->all() as $error)
+              <li>{{$error}}</li>  
+            @endforeach
+        </ul>
+        @endif
+    </div>
     <form method="POST" action="{{route('formulas.store')}}">
     @csrf
     @method('post')

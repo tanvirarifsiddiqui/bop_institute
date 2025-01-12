@@ -8,6 +8,15 @@
 </head>
 <body>
     <h1>Add a Category</h1>
+    <div>
+        @if($errors->any())
+        <ul>
+            @foreach ($errors->any as $error)
+              <li>{{$error}}</li>  
+            @endforeach
+        </ul>
+        @endif
+    </div>
     <form method="POST" action="{{route('categories.store')}}">
         @csrf
         @method('post')
