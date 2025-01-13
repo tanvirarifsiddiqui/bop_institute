@@ -4,9 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormulaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FormulaController::class, 'index' ])->name('root');
 
 //category Routes
 Route::get('/categories', [CategoryController::class, 'index' ])->name('categories.index');

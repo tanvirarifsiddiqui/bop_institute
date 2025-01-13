@@ -11,6 +11,12 @@
         Formulas
     </h1>
     <div>
+        <a href="{{route('formulas.create')}}">Create Formula</a>
+    </div>
+    <div>
+        <a href="{{route('categories.index')}}">Category List</a>
+    </div>
+    <div>
         @if (session()->has('success'))
         <div>
             {{session('success')}}
@@ -30,7 +36,7 @@
                 <th>purchasae</th> 
                 <th>category_id</th> 
                 <th>Edit</th> 
-                <th>Delete</th> 
+                <th>Delete</th>
             </tr>
             @foreach ($formulas as $formula)
                 <tr>

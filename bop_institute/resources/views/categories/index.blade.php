@@ -11,6 +11,9 @@
         Categories
     </h1>
     <div>
+        <a href="{{route('categories.create')}}">Create Category</a>
+    </div>
+    <div>
         @if (session()->has('success'))
         <div>
             {{session('success')}}
