@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('discount')->default(0)->nullable(); 
             $table->string('pdf')->nullable(); 
             $table->integer('purchase')->default(0);
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

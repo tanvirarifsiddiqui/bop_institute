@@ -11,11 +11,19 @@
         Categories
     </h1>
     <div>
+        @if (session()->has('success'))
+        <div>
+            {{session('success')}}
+        </div>
+        @endif
+    </div>
+    <div>
         <table border="1">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Edit</th>
+                <th>Delete</th>
             </tr>
             @foreach ($categories as $category)
                 <tr>
@@ -23,6 +31,13 @@
                     <td>{{$category->name}}</td>
                     <td>
                         <a href="{{route('categories.edit',  ['category'=>$category])}}">Edit</a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{{route('categories.destroy',['category'=>$category])}}">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" value="Delete">
+                        </form>
                     </td>
                 </tr>
             @endforeach

@@ -44,7 +44,12 @@ class FormulaController extends Controller
            ]);
 
            $formula->update($data);
-           return redirect(route('formulas.index'));
+           return redirect(route('formulas.index'))->with('success','Formula Updated Successfully');
+    }
+
+    public function destroy(Formula $formula){
+        $formula->delete();
+        return redirect(route('formulas.index'))->with('success','Formula Deleted Successfully');
     }
 
 }

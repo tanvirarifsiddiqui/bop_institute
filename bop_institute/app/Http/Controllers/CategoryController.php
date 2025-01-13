@@ -40,7 +40,13 @@ class CategoryController extends Controller
 
         $category->update($data);
 
-        return redirect(route('categories.index'))->with('success', 'Product Updated Successfully');
+        return redirect(route('categories.index'))->with('success', 'Category Updated Successfully');
 
+    }
+
+    public function destroy(Category $category){
+        $category->delete();
+
+        return redirect(route('categories.index'))->with('success', 'Category Deleted Successfully');
     }
 }

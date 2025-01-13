@@ -11,6 +11,13 @@
         Formulas
     </h1>
     <div>
+        @if (session()->has('success'))
+        <div>
+            {{session('success')}}
+        </div>
+        @endif
+    </div>
+    <div>
         <table border="1">
             <tr>
                 <th>ID</th> 
@@ -23,6 +30,7 @@
                 <th>purchasae</th> 
                 <th>category_id</th> 
                 <th>Edit</th> 
+                <th>Delete</th> 
             </tr>
             @foreach ($formulas as $formula)
                 <tr>
@@ -37,6 +45,13 @@
                     <td>{{$formula->category_id}}</td>
                     <td>
                         <a href="{{route('formulas.edit', ['formula'=>$formula])}}">Edit</a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{{route('formulas.destroy',['formula'=>$formula])}}">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" value="Delete">
+                        </form>
                     </td>
                 </tr>
             @endforeach
