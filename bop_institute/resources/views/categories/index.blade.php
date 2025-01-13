@@ -10,6 +10,23 @@
     <h1>
         Categories
     </h1>
-    <div>Index</div>
+    <div>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Edit</th>
+            </tr>
+            @foreach ($categories as $category)
+                <tr>
+                    <td>{{$category->id}}</td>
+                    <td>{{$category->name}}</td>
+                    <td>
+                        <a href="{{route('categories.edit',  ['category'=>$category])}}">Edit</a>
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
 </body>
 </html>

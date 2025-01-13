@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        return view('categories.index');
+        $categories = Category::all();
+        return view('categories.index',['categories'=>$categories]);
     }
     
     public function create(){
@@ -25,6 +26,21 @@ class CategoryController extends Controller
         return redirect(route('categories.index'));
 
         // dd($request);
+
+    }
+
+    public function edit(Category $category){
+        return view('categories.edit', ['category'=>$category]);
+    }
+
+    public function update(Category $category, Request $request){
+        $data = $request->validate([
+            'name'=>'required',
+        ]);
+
+        $category->update($data);
+
+        return redirect(route('categories.index'))->with('success', 'Product Updated Successfully');
 
     }
 }
