@@ -9,11 +9,11 @@ class CategoryController extends Controller
 {
     public function index(){
         $categories = Category::all();
-        return view('categories.index',['categories'=>$categories]);
+        return view('admin.category.index',['categories'=>$categories]);
     }
-    
+
     public function create(){
-        return view('categories.create');
+        return view('admin.category.create');
     }
 
     public function store(Request $request){
@@ -30,7 +30,7 @@ class CategoryController extends Controller
     }
 
     public function edit(Category $category){
-        return view('categories.edit', ['category'=>$category]);
+        return view('admin.category.edit', ['category'=>$category]);
     }
 
     public function update(Category $category, Request $request){

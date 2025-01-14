@@ -1,0 +1,47 @@
+/* Custom Carousel */
+.custom-carousel {
+    max-height: 400px; /* Limit the height */
+    overflow: hidden; /* Prevent overflow of images */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.custom-carousel img {
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    height: 400px; /* Match the container height */
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add a slight shadow for a lifted effect */
+}
+
+.carousel-caption {
+    padding: 15px;
+}
+
+.carousel-caption h5 {
+    font-size: 1.8rem; /* Adjust font size for captions */
+    font-weight: 600;
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-carousel {
+        max-height: 300px;
+    }
+
+    .custom-carousel img {
+        height: 300px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}

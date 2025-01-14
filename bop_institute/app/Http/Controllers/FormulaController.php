@@ -8,14 +8,14 @@ class FormulaController extends Controller
 {
     public function index(){
         $formulas = Formula::all();
-        return view('formulas.index', ['formulas'=>$formulas]);
-        
+        return view('admin.formula.index', ['formulas'=>$formulas]);
+
     }
-    
+
     public function create(){
-        return view('formulas.create');
+        return view('admin.formula.create');
     }
-    
+
     public function store(Request $request){
        $data = $request->validate([
         'category_id'=> 'required',
@@ -31,9 +31,9 @@ class FormulaController extends Controller
     }
 
     public function edit(Formula $formula){
-        return view('formulas.edit',['formula'=>$formula]);
+        return view('admin.formula.edit',['formula'=>$formula]);
     }
-    
+
     public function update(Formula $formula, Request $request){
         $data = $request->validate([
             'category_id'=> 'required',
