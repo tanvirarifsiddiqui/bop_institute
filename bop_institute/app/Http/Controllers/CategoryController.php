@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
         $newCategory = Category::create($data);
 
-        return redirect(route('categories.index'));
+        return redirect(route('admin.categories.index'));
 
         // dd($request);
 
@@ -40,13 +40,13 @@ class CategoryController extends Controller
 
         $category->update($data);
 
-        return redirect(route('categories.index'))->with('success', 'Category Updated Successfully');
+        return redirect(route('admin.categories.index'))->with('success', 'Category Updated Successfully');
 
     }
 
     public function destroy(Category $category){
         $category->delete();
 
-        return redirect(route('categories.index'))->with('success', 'Category Deleted Successfully');
+        return redirect(route('admin.categories.index'))->with('success', 'Category Deleted Successfully');
     }
 }

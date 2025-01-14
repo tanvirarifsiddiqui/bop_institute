@@ -23,7 +23,7 @@
             color: #ffcc00 !important; /* Highlight color on hover */
         }
         .content {
-            margin-top: 70px;
+            margin-top: 20px;
             padding: 20px;
             background: #fff;
             border-radius: 10px;
@@ -40,15 +40,27 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('formulas.index') }}">Formula E-Book</a>
+                    <a class="nav-link" href="{{ route('admin.formulas.index') }}">Formula E-Book</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+                    <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <form method="POST" action="{{ route('admin.logout') }}">
+                        @csrf
+                        <x-responsive-nav-link :href="route('admin.logout')"
+                                               onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-responsive-nav-link>
+                    </form>
                 </li>
             </ul>
         </div>

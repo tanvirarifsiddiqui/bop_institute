@@ -12,12 +12,12 @@
         @if($errors->any())
         <ul>
             @foreach($errors->all() as $error)
-              <li>{{$error}}</li>  
+              <li>{{$error}}</li>
             @endforeach
         </ul>
         @endif
     </div>
-    <form method="POST" action="{{route('formulas.store')}}">
+    <form method="POST" action="{{route('admin.formulas.store')}}">
     @csrf
     @method('post')
 

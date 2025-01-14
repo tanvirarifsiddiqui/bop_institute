@@ -11,10 +11,10 @@
         Formulas
     </h1>
     <div>
-        <a href="{{route('formulas.create')}}">Create Formula</a>
+        <a href="{{route('admin.formulas.create')}}">Create Formula</a>
     </div>
     <div>
-        <a href="{{route('categories.index')}}">Category List</a>
+        <a href="{{route('admin.categories.index')}}">Category List</a>
     </div>
     <div>
         @if (session()->has('success'))
@@ -26,16 +26,16 @@
     <div>
         <table border="1">
             <tr>
-                <th>ID</th> 
-                <th>Name</th> 
-                <th>Description</th> 
-                <th>Image</th> 
-                <th>Price</th> 
-                <th>Discount</th> 
-                <th>pdf</th> 
-                <th>purchasae</th> 
-                <th>category_id</th> 
-                <th>Edit</th> 
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>pdf</th>
+                <th>purchasae</th>
+                <th>category_id</th>
+                <th>Edit</th>
                 <th>Delete</th>
             </tr>
             @foreach ($formulas as $formula)
@@ -50,10 +50,10 @@
                     <td>{{$formula->purchase}}</td>
                     <td>{{$formula->category_id}}</td>
                     <td>
-                        <a href="{{route('formulas.edit', ['formula'=>$formula])}}">Edit</a>
+                        <a href="{{route('admin.formulas.edit', ['formula'=>$formula])}}">Edit</a>
                     </td>
                     <td>
-                        <form method="POST" action="{{route('formulas.destroy',['formula'=>$formula])}}">
+                        <form method="POST" action="{{route('admin.formulas.destroy',['formula'=>$formula])}}">
                             @csrf
                             @method('delete')
                             <input type="submit" value="Delete">

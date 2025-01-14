@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('formulas', function (Blueprint $table) {
             $table->id();
-            $table->string('title'); 
-            $table->text('description')->nullable(); 
-            $table->string('image')->nullable(); 
-            $table->decimal('price', 8, 2); 
-            $table->decimal('discount')->default(0)->nullable(); 
-            $table->string('pdf')->nullable(); 
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
+            $table->decimal('price', 8, 2);
+            $table->decimal('discount',8,2)->default(0)->nullable();
+            $table->string('pdf')->nullable();
             $table->integer('purchase')->default(0);
-            $table->foreignId('category_id')->constrained()->nullOnDelete();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->nullOnDelete();
             $table->timestamps();
         });
     }

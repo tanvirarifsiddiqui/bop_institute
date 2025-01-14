@@ -27,7 +27,7 @@ class FormulaController extends Controller
 
        $newFormula = Formula::create($data);
 
-       return redirect(route('formulas.index'));
+       return redirect(route('admin.formulas.index'));
     }
 
     public function edit(Formula $formula){
@@ -44,12 +44,12 @@ class FormulaController extends Controller
            ]);
 
            $formula->update($data);
-           return redirect(route('formulas.index'))->with('success','Formula Updated Successfully');
+           return redirect(route('admin.formulas.index'))->with('success','Formula Updated Successfully');
     }
 
     public function destroy(Formula $formula){
         $formula->delete();
-        return redirect(route('formulas.index'))->with('success','Formula Deleted Successfully');
+        return redirect(route('admin.formulas.index'))->with('success','Formula Deleted Successfully');
     }
 
 }

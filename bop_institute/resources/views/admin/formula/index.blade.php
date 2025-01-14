@@ -5,7 +5,7 @@
 @section('content')
     <div class="container mt-5">
         <h1>Formula E-Book</h1>
-        <a href="{{ route('formulas.create') }}" class="btn btn-primary mb-3">Add Formula E-Book</a>
+        <a href="{{ route('admin.formulas.create') }}" class="btn btn-primary mb-3">Add Formula E-Book</a>
         @if (session()->has('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
@@ -38,10 +38,10 @@
                     <td>{{ $formula->purchase }}</td>
                     <td>{{ $formula->category_id }}</td>
                     <td>
-                        <a href="{{ route('formulas.edit', ['formula'=>$formula]) }}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="{{ route('admin.formulas.edit', ['formula'=>$formula]) }}" class="btn btn-sm btn-primary">Edit</a>
                     </td>
                     <td>
-                        <form method="POST" action="{{ route('formulas.destroy', ['formula'=>$formula]) }}">
+                        <form method="POST" action="{{ route('admin.formulas.destroy', ['formula'=>$formula]) }}">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>

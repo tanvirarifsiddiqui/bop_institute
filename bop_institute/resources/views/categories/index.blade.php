@@ -11,7 +11,7 @@
         Categories
     </h1>
     <div>
-        <a href="{{route('categories.create')}}">Create Category</a>
+        <a href="{{route('admin.categories.create')}}">Create Category</a>
     </div>
     <div>
         @if (session()->has('success'))
@@ -33,10 +33,10 @@
                     <td>{{$category->id}}</td>
                     <td>{{$category->name}}</td>
                     <td>
-                        <a href="{{route('categories.edit',  ['category'=>$category])}}">Edit</a>
+                        <a href="{{route('admin.categories.edit',  ['category'=>$category])}}">Edit</a>
                     </td>
                     <td>
-                        <form method="POST" action="{{route('categories.destroy',['category'=>$category])}}">
+                        <form method="POST" action="{{route('admin.categories.destroy',['category'=>$category])}}">
                             @csrf
                             @method('delete')
                             <input type="submit" value="Delete">

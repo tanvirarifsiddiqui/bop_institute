@@ -12,12 +12,12 @@
         @if($errors->any())
         <ul>
             @foreach ($errors->all() as $error)
-              <li>{{$error}}</li>  
+              <li>{{$error}}</li>
             @endforeach
         </ul>
         @endif
     </div>
-    <form method="POST" action="{{route('categories.update', ['category'=>$category])}}">
+    <form method="POST" action="{{route('admin.categories.update', ['category'=>$category])}}">
         @csrf
         @method('put')
         <div>

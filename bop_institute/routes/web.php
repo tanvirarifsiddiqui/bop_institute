@@ -3,23 +3,57 @@
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormulaController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin', [AdminHomeController::class, 'index' ])->name('admin.home');
+// Public Routes
+Route::get('/', function () {
+    return view('welcome');
+});
 
-//category Routes
-Route::get('/categories', [CategoryController::class, 'index' ])->name('categories.index');
-Route::get('/categories/create', [CategoryController::class, 'create' ])->name('categories.create');
-Route::post('/categories', [CategoryController::class, 'store' ])->name('categories.store');
-Route::get('/categories/{category}/edit', [CategoryController::class, 'edit' ])->name('categories.edit');
-Route::put('/categories/{category}/update', [CategoryController::class, 'update' ])->name('categories.update');
-Route::delete('/categories/{category}/destroy', [CategoryController::class, 'destroy' ])->name('categories.destroy');
+// Authenticated User Routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    // User Dashboard
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    // Profile Management
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// Admin Routes
+Route::prefix('admin')
+    ->name('admin.')
+    ->middleware(['auth:admin', 'verified'])
+    ->group(function () {
+        // Admin Home
+        Route::get('/dashboard', [AdminHomeController::class, 'index'])->name('home');
+
+        // Category Routes
+        Route::prefix('categories')->name('categories.')->group(function () {
+            Route::get('/', [CategoryController::class, 'index'])->name('index');
+            Route::get('/create', [CategoryController::class, 'create'])->name('create');
+            Route::post('/', [CategoryController::class, 'store'])->name('store');
+            Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('edit');
+            Route::put('/{category}', [CategoryController::class, 'update'])->name('update');
+            Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('destroy');
+        });
+
+        // Formula Routes
+        Route::prefix('formulas')->name('formulas.')->group(function () {
+            Route::get('/', [FormulaController::class, 'index'])->name('index');
+            Route::get('/create', [FormulaController::class, 'create'])->name('create');
+            Route::post('/', [FormulaController::class, 'store'])->name('store');
+            Route::get('/{formula}/edit', [FormulaController::class, 'edit'])->name('edit');
+            Route::put('/{formula}', [FormulaController::class, 'update'])->name('update');
+            Route::delete('/{formula}', [FormulaController::class, 'destroy'])->name('destroy');
+        });
+    });
 
 
-//formula Routes
-Route::get('/formulas', [FormulaController::class, 'index'])->name('formulas.index');
-Route::get('/formulas/create', [FormulaController::class, 'create'])->name('formulas.create');
-Route::post('/formulas', [FormulaController::class, 'store'])->name('formulas.store');
-Route::get('/formulas/{formula}/edit', [FormulaController::class, 'edit'])->name('formulas.edit');
-Route::put('/formulas/{formula}/update', [FormulaController::class, 'update'])->name('formulas.update');
-Route::delete('/formulas/{formula}/destroy', [FormulaController::class, 'destroy'])->name('formulas.destroy');
+// Include Breeze Authentication Routes
+require __DIR__ . '/auth.php';
+require __DIR__ . '/admin-auth.php';

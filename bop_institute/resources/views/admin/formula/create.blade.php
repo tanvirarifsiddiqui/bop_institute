@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('formulas.store') }}" class="p-4 bg-light rounded shadow">
+        <form method="POST" action="{{ route('admin.formulas.store') }}" class="p-4 bg-light rounded shadow">
             @csrf
             @method('post')
 

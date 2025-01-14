@@ -5,7 +5,7 @@
 @section('content')
     <div class="container mt-4">
         <h1>Categories</h1>
-        <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Create Category</a>
+        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary mb-3">Create Category</a>
         @if (session()->has('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
@@ -24,11 +24,11 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>
-                        <a href="{{ route('categories.edit', ['category'=>$category]) }}"
+                        <a href="{{ route('admin.categories.edit', ['category'=>$category]) }}"
                            class="btn btn-sm btn-primary">Edit</a>
                     </td>
                     <td>
-                        <form method="POST" action="{{ route('categories.destroy', ['category'=>$category]) }}">
+                        <form method="POST" action="{{ route('admin.categories.destroy', ['category'=>$category]) }}">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>

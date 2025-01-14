@@ -19,7 +19,7 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ route('categories.store') }}">
+                <form method="POST" action="{{ route('admin.categories.store') }}">
                     @csrf
                     @method('post')
                     <div class="mb-3">

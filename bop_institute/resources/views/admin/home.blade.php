@@ -53,8 +53,8 @@
         <div class="mt-4">
             <h2>Welcome, Super Admin!</h2>
             <p>Manage formulas, categories, and more from the admin panel.</p>
-            <a href="{{ route('formulas.index') }}" class="btn btn-primary">Manage Formulas</a>
-            <a href="{{ route('categories.index') }}" class="btn btn-secondary">Manage Categories</a>
+            <a href="{{ route('admin.formulas.index') }}" class="btn btn-primary">Manage Formulas</a>
+            <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Manage Categories</a>
         </div>
     </div>
 @endsection
