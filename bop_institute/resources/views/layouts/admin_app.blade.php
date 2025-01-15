@@ -15,12 +15,19 @@
         }
         .navbar {
             background: linear-gradient(to right, #009568, #fa0096); /* Gradient navbar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
         }
         .navbar-brand, .nav-link {
             color: white !important;
         }
         .navbar-nav .nav-link:hover {
             color: #ffcc00 !important; /* Highlight color on hover */
+        }
+        .navbar-nav .nav-link.active {
+            border-bottom: 2px solid white; /* Underline effect */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+            transform: translateY(2px); /* Pressed effect */
+            transition: all 0.2s ease-in-out;
         }
         .content {
             margin-top: 20px;
@@ -33,39 +40,7 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="{{ route('admin.home') }}">BOP Institute</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.formulas.index') }}">Formula E-Book</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <form method="POST" action="{{ route('admin.logout') }}">
-                        @csrf
-                        <x-responsive-nav-link :href="route('admin.logout')"
-                                               onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                            {{ __('Log Out') }}
-                        </x-responsive-nav-link>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+@include('layouts.admin_navigation')
 
 <!-- Main Content -->
 <div class="content">
