@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Formula;
 
@@ -13,17 +14,30 @@ class FormulaController extends Controller
     }
 
     public function create(){
-        return view('admin.formula.create');
+        $categories = Category::all();
+        return view('admin.formula.create',["categories"=>$categories]);
     }
 
     public function store(Request $request){
        $data = $request->validate([
-        'category_id'=> 'required',
+        'category_id'=> 'required|exists:categories,id',
         'title'=> 'required',
         'price'=> 'required | numeric',
         'description'=> 'required',
         'discount'=> 'required | numeric',
+        'pdf' => 'nullable|mimes:pdf|max:2048',
+        'image' => 'nullable|image|max:2048',
        ]);
+
+        // Handle PDF Upload
+        if ($request->hasFile('pdf')) {
+            $data['pdf'] = $request->file('pdf')->store('pdfs', 'private');
+        }
+
+        // Handle Image Upload
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('images', 'public');
+        }
 
        $newFormula = Formula::create($data);
 
