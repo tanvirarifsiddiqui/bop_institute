@@ -57,12 +57,14 @@
                         @csrf
                         <x-responsive-nav-link :href="route('admin.logout')"
                                                onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+                            this.closest('form').submit();"
+                                               style="color: white;font-weight: bold">
                             {{ __('Log Out') }}
                         </x-responsive-nav-link>
                     </form>
                 </li>
             </ul>
+
         </div>
     </div>
 </nav>
