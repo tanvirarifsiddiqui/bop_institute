@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Formula;
+use Illuminate\Support\Facades\Storage;
 
 class FormulaController extends Controller
 {
@@ -44,8 +45,13 @@ class FormulaController extends Controller
        return redirect(route('admin.formulas.index'));
     }
 
-    public function edit(Formula $formula){
-        return view('admin.formula.edit',['formula'=>$formula]);
+    public function edit(Formula $formula)
+    {
+        // Fetch all categories from the database
+        $categories = Category::all();
+
+        // Pass formula and categories to the view
+        return view('admin.formula.edit', compact('formula', 'categories'));
     }
 
     public function update(Formula $formula, Request $request){
@@ -55,7 +61,19 @@ class FormulaController extends Controller
             'price'=> 'required | numeric',
             'description'=> 'required',
             'discount'=> 'required | numeric',
+            'pdf' => 'nullable|mimes:pdf|max:2048',
+            'image' => 'nullable|image|max:2048',
            ]);
+
+        // Handle PDF Upload
+        if ($request->hasFile('pdf')) {
+            $data['pdf'] = $request->file('pdf')->store('pdfs', 'private');
+        }
+
+        // Handle Image Upload
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('images', 'public');
+        }
 
            $formula->update($data);
            return redirect(route('admin.formulas.index'))->with('success','Formula Updated Successfully');
@@ -65,5 +83,37 @@ class FormulaController extends Controller
         $formula->delete();
         return redirect(route('admin.formulas.index'))->with('success','Formula Deleted Successfully');
     }
+
+    public function viewImage($id)
+    {
+        $formula = Formula::findOrFail($id);
+
+        // Ensure the image file exists
+        if (!Storage::exists('public/' . $formula->image)) {
+            abort(404, 'Image not found');
+        }
+
+        // Get the file path and display it in the browser
+        $filePath = storage_path('app/public/' . $formula->image);
+
+        return response()->file($filePath, [
+            'Content-Type' => mime_content_type($filePath)
+        ]);
+    }
+
+    public function viewPdf($id)
+    {
+        $formula = Formula::findOrFail($id);
+
+        if (!$formula->pdf) {
+            abort(404, 'PDF not found');
+        }
+        // Serve the PDF securely
+        return response()->file(storage_path('app/private/' . $formula->pdf));
+
+    }
+
+
+
 
 }

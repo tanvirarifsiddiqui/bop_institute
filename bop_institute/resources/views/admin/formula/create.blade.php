@@ -71,4 +71,24 @@
             <button type="submit" class="btn btn-primary">Save Formula</button>
         </form>
     </div>
+
+    <!-- Script for Image Preview -->
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('image-preview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('d-none'); // Make the image visible
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = "#";
+                preview.classList.add('d-none'); // Hide the image if no file is selected
+            }
+        }
+    </script>
 @endsection

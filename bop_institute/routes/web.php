@@ -44,6 +44,8 @@ Route::prefix('admin')
 
         // Formula Routes
         Route::prefix('formulas')->name('formulas.')->group(function () {
+            Route::get('/image/{id}', [FormulaController::class, 'viewImage'])->name('viewImage');
+            Route::get('/pdf/{id}', [FormulaController::class, 'viewPdf'])->name('viewPdf');
             Route::get('/', [FormulaController::class, 'index'])->name('index');
             Route::get('/create', [FormulaController::class, 'create'])->name('create');
             Route::post('/', [FormulaController::class, 'store'])->name('store');

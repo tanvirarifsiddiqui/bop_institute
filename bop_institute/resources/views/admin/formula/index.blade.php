@@ -31,10 +31,22 @@
                     <td>{{ $formula->id }}</td>
                     <td>{{ $formula->title }}</td>
                     <td>{{ $formula->description }}</td>
-                    <td>{{ $formula->image }}</td>
+                    <td>
+                        @if($formula->image)
+                            <a href="{{ asset('storage/' . $formula->image) }}" target="_blank">Image</a>
+                        @else
+                            No Image
+                        @endif
+                    </td>
                     <td>{{ $formula->price }}</td>
                     <td>{{ $formula->discount }}</td>
-                    <td>{{ $formula->pdf }}</td>
+                    <td>
+                        @if($formula->pdf)
+                            <a href="{{ route('admin.formulas.viewPdf', ['id' => $formula->id]) }}" target="_blank">PDF</a>
+                        @else
+                            No PDF
+                        @endif
+                    </td>
                     <td>{{ $formula->purchase }}</td>
                     <td>{{ $formula->category_id }}</td>
                     <td>
