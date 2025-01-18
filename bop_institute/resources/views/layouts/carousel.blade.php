@@ -1,21 +1,21 @@
-<div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="homeCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{ asset('images/carousel_slider/slide1.png') }}" class="d-block w-100" alt="Carousel Image 1">
+        <div class="carousel-item active" style="height: 400px;">
+            <img src="{{ asset('images/carousel_slider/slide1.png') }}" class="d-block w-100 h-auto" style="object-fit: cover;" alt="Carousel Image 1">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Welcome to BOP Institute</h5>
                 <p>Your trusted source for chemical formulations.</p>
             </div>
         </div>
-        <div class="carousel-item">
-            <img src="{{ asset('images/carousel_slider/slide1.png') }}" class="d-block w-100" alt="Carousel Image 2">
+        <div class="carousel-item" style="height: 400px;">
+            <img src="{{ asset('images/carousel_slider/slide2.png') }}" class="d-block w-100 h-auto" style="object-fit: cover;" alt="Carousel Image 2">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Explore Our Formula Collection</h5>
                 <p>Get access to verified and tested formulas.</p>
             </div>
         </div>
-        <div class="carousel-item">
-            <img src="{{ asset('images/carousel_slider/slide1.png') }}" class="d-block w-100" alt="Carousel Image 3">
+        <div class="carousel-item" style="height: 400px;">
+            <img src="{{ asset('images/carousel_slider/slide3.png') }}" class="d-block w-100 h-auto" style="object-fit: cover;" alt="Carousel Image 3">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Join Us Today</h5>
                 <p>Sign up to purchase formulas and more.</p>

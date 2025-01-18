@@ -1,40 +1,72 @@
 /* Custom Carousel */
+/* Force Full-Width Carousel */
 .custom-carousel {
-    max-height: 400px; /* Limit the height */
-    overflow: hidden; /* Prevent overflow of images */
-    border-radius: 15px; /* Rounded corners */
+    width: 100%; /* Ensure full width */
+    max-width: 100vw; /* Prevent overflow */
+    margin: 0 auto; /* Center horizontally */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    border-radius: 15px; /* Smooth corners */
+}
+
+/* Carousel Item */
+.custom-carousel .carousel-item {
+    position: relative; /* For overlay positioning */
 }
 
 .custom-carousel img {
-    object-fit: cover; /* Maintain aspect ratio and fill the container */
-    height: 400px; /* Match the container height */
+    width: 100%; /* Ensure images span the full width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth transition */
 }
 
-.shadow-lg {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add a slight shadow for a lifted effect */
+.custom-carousel img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
 }
 
-.carousel-caption {
-    padding: 15px;
+/* Gradient Overlay */
+.custom-carousel .carousel-caption {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
 }
 
-.carousel-caption h5 {
-    font-size: 1.8rem; /* Adjust font size for captions */
-    font-weight: 600;
+/* Carousel Controls */
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker controls */
+    border-radius: 50%; /* Rounded controls */
 }
 
-.carousel-caption p {
-    font-size: 1.1rem;
+.custom-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+
+/* Carousel Adjustments */
+.carousel {
+    border-radius: 15px;
+    overflow: hidden;
+}
+.carousel-item {
+    height: 250px;
+}
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 100px) {
     .custom-carousel {
-        max-height: 300px;
+        max-height: 200px;
     }
 
     .custom-carousel img {
-        height: 300px;
+        height: 200px;
     }
 
     .carousel-caption h5 {
@@ -44,4 +76,44 @@
     .carousel-caption p {
         font-size: 1rem;
     }
+
+    /* Top Navigation */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1030; /* Above other content */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sidebar */
+    .side-nav {
+        position: fixed;
+        top: 56px; /* Height of the navbar */
+        left: 0;
+        height: calc(100vh - 56px);
+        width: 250px; /* Sidebar width */
+        background: #f8f9fa;
+        overflow-y: auto;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    /* Main Content */
+    .main-content {
+        margin-top: 56px; /* Navbar height */
+        margin-left: 250px; /* Sidebar width */
+        padding: 20px;
+    }
+
+    /* Footer */
+    footer {
+        margin-left: 250px; /* Align with content */
+        padding: 20px;
+        background: #f1f1f1;
+        text-align: center;
+    }
+
 }
+
