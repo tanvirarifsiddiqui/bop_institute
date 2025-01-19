@@ -56,6 +56,10 @@ Route::prefix('admin')
     });
 
 
+//guests & users
+// Public Routes
+Route::get('/', [FormulaController::class, 'topPurchasedFormulas'])->name('welcome');
+
 // Include Breeze Authentication Routes
 require __DIR__ . '/auth.php';
 require __DIR__ . '/admin-auth.php';

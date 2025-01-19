@@ -113,6 +113,15 @@ class FormulaController extends Controller
 
     }
 
+    public function topPurchasedFormulas()
+    {
+        // Fetch top 4 formulas sorted by the 'purchase' column
+        $topPurchasedFormulas = Formula::orderBy('purchase', 'desc')->take(4)->get();
+
+        // Pass the formulas to the welcome view
+        return view('welcome', compact('topPurchasedFormulas'));
+    }
+
 
 
 

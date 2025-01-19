@@ -9,7 +9,7 @@
 
     <!-- Fonts and Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet"> <!-- Ensuring styles.css is included -->
 </head>
 <body>
 <!-- Top Navigation -->
