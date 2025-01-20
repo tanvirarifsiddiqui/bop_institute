@@ -122,7 +122,17 @@ class FormulaController extends Controller
         return view('welcome', compact('topPurchasedFormulas'));
     }
 
+    public function formulaPage(Formula $formula){
+        $categories = Category::with('formulas')->get();
+        return view('formula.index', compact('categories'));
+    }
 
+    public function show($id)
+    {
+        $formula = Formula::findOrFail($id);
+
+        return view('formula.profile', compact('formula'));
+    }
 
 
 }

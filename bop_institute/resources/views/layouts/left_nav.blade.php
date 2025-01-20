@@ -1,11 +1,8 @@
-<div id="sidebar" class="d-flex flex-column flex-shrink-0 bg-light p-3 side-nav" style="width: 250px; transition: transform 0.3s ease-in-out;">
-    <button id="toggleSidebar" class="btn btn-light d-md-none mb-3">
-        <span>&#9776; Menu</span>
-    </button>
+<div id="sidebar" class="d-flex flex-column bg-light p-3 side-nav" style="width: 250px; transition: transform 0.3s ease-in-out;">
 
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="#" class="nav-link active">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
                 Home
             </a>
@@ -14,173 +11,51 @@
         <!-- Accordion Section -->
         <li>
             <div class="accordion" id="mainAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#coursesAccordion" aria-expanded="false">
-                            Offline Courses
-                        </button>
-                    </h2>
-                    <div id="coursesAccordion" class="accordion-collapse collapse">
-                        <ul class="list-group list-group-flush custom-list">
-                            <li class="list-group-item"><span>Cosmetic and Toiletries Products</span></li>
-                            <li class="list-group-item"><span>Cleaning Items</span></li>
-                            <li class="list-group-item"><span>Veterinary Medicine Products</span></li>
-                            <li class="list-group-item"><span>Herbal Cosmetic Products</span></li>
-                            <li class="list-group-item"><span>Textile Chemicals and Auxiliaries</span></li>
-                            <li class="list-group-item"><span>Industrial Chemicals</span></li>
-                            <li class="list-group-item"><span>Automobile Products</span></li>
-                            <li class="list-group-item"><span>Adhesive Products</span></li>
-                            <li class="list-group-item"><span>Paint Items</span></li>
-                            <li class="list-group-item"><span>Food Products</span></li>
-                            <li class="list-group-item"><span>Tobacco Products</span></li>
-                            <li class="list-group-item"><span>Construction Products</span></li>
-                            <li class="list-group-item"><span>Software Development</span></li>
-                            <li class="list-group-item"><span>Android and iOS Apps Development</span>
-                        </ul>
-                    </div>
-                </div>
+                @php
+                    $sections = [
+                        'Offline Courses' => [
+                            'Cosmetic and Toiletries Products',
+                            'Cleaning Items',
+                            'Veterinary Medicine Products',
+                            'Herbal Cosmetic Products',
+                            'Textile Chemicals and Auxiliaries',
+                            'Industrial Chemicals',
+                            'Automobile Products',
+                            'Adhesive Products',
+                            'Paint Items',
+                            'Food Products',
+                            'Tobacco Products',
+                            'Construction Products',
+                            'Software Development',
+                            'Android and iOS Apps Development'
+                        ],
+                        'Online Courses' => [
+                            // Same content as above or modify as required
+                        ],
+                        'Lab Testing' => ['Lab 1', 'Lab 2', 'Lab 3'],
+                        'Formula Books' => ['Formula 1', 'Formula 2', 'Formula 3'],
+                        'Software' => ['Software 1', 'Software 2', 'Software 3']
+                    ];
+                @endphp
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#galleryAccordion" aria-expanded="false">
-                            Online Courses
-                        </button>
-                    </h2>
-                    <div id="galleryAccordion" class="accordion-collapse collapse">
-                        <ul class="list-group list-group-flush custom-list">
-                            <li class="list-group-item"><span>Cosmetic and Toiletries Products</span></li>
-                            <li class="list-group-item"><span>Cleaning Items</span></li>
-                            <li class="list-group-item"><span>Veterinary Medicine Products</span></li>
-                            <li class="list-group-item"><span>Herbal Cosmetic Products</span></li>
-                            <li class="list-group-item"><span>Textile Chemicals and Auxiliaries</span></li>
-                            <li class="list-group-item"><span>Industrial Chemicals</span></li>
-                            <li class="list-group-item"><span>Automobile Products</span></li>
-                            <li class="list-group-item"><span>Adhesive Products</span></li>
-                            <li class="list-group-item"><span>Paint Items</span></li>
-                            <li class="list-group-item"><span>Food Products</span></li>
-                            <li class="list-group-item"><span>Tobacco Products</span></li>
-                            <li class="list-group-item"><span>Construction Products</span></li>
-                            <li class="list-group-item"><span>Software Development</span></li>
-                            <li class="list-group-item"><span>Android and iOS Apps Development</span>
-                        </ul>
+                @foreach($sections as $section => $items)
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ Str::slug($section) }}" aria-expanded="false">
+                                {{ $section }}
+                            </button>
+                        </h2>
+                        <div id="{{ Str::slug($section) }}" class="accordion-collapse collapse">
+                            <ul class="list-group list-group-flush custom-list">
+                                @foreach($items as $item)
+                                    <li class="list-group-item"><span>{{ $item }}</span></li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#labAccordion" aria-expanded="false">
-                            Lab Testing
-                        </button>
-                    </h2>
-                    <div id="labAccordion" class="accordion-collapse collapse">
-                        <ul class="list-group list-group-flush custom-list">
-                            <li class="list-group-item"><span>Lab 1</span></li>
-                            <li class="list-group-item"><span>Lab 2</span></li>
-                            <li class="list-group-item"><span>Lab 3</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#formulaAccordion" aria-expanded="false">
-                            Formula Books
-                        </button>
-                    </h2>
-                    <div id="formulaAccordion" class="accordion-collapse collapse">
-                        <ul class="list-group list-group-flush custom-list">
-                            <li class="list-group-item"><span>Formula 1</span></li>
-                            <li class="list-group-item"><span>Formula 2</span></li>
-                            <li class="list-group-item"><span>Formula 3</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#softwareAccordion" aria-expanded="false">
-                            Software
-                        </button>
-                    </h2>
-                    <div id="softwareAccordion" class="accordion-collapse collapse">
-                        <ul class="list-group list-group-flush custom-list">
-                            <li class="list-group-item"><span>Software 1</span></li>
-                            <li class="list-group-item"><span>Software 2</span></li>
-                            <li class="list-group-item"><span>Software 3</span></li>
-                        </ul>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </li>
         <!-- End Accordion Section -->
-
     </ul>
 </div>
-
-<script>
-    const sidebar = document.getElementById('sidebar');
-    const toggleSidebar = document.getElementById('toggleSidebar');
-    const mainContent = document.getElementById('mainContent');
-
-    // Toggle sidebar visibility
-    toggleSidebar.addEventListener('click', () => {
-        const isCollapsed = sidebar.style.transform === 'translateX(-250px)';
-        sidebar.style.transform = isCollapsed ? 'translateX(0)' : 'translateX(-250px)';
-    });
-
-    // Ensure sidebar visibility on larger screens
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-            sidebar.style.transform = 'translateX(0)';
-        } else {
-            sidebar.style.transform = 'translateX(-250px)';
-        }
-    });
-</script>
-
-<style>
-    /* Custom Styles for Sidebar Items */
-    .list-group-item {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        padding: 0.75rem 1.25rem;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    }
-
-    .list-group-item span {
-        font-size: 1rem;
-        font-weight: 500;
-        color: #495057; /* Neutral dark color */
-    }
-
-    .list-group-item:hover {
-        background-color: #f8f9fa; /* Light hover effect */
-        color: #0d6efd; /* Bootstrap primary color */
-    }
-
-    /* Remove text underline from links and make them span-like */
-    .list-group-item a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    /* Accordion Header Style */
-    .accordion-button {
-        font-weight: 600;
-        color: #343a40;
-        background-color: #e9ecef;
-        border: none;
-    }
-
-    .accordion-button:focus {
-        box-shadow: none;
-    }
-
-    .accordion-button:hover {
-        background-color: #dfe4ea;
-    }
-</style>

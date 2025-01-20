@@ -59,6 +59,9 @@ Route::prefix('admin')
 //guests & users
 // Public Routes
 Route::get('/', [FormulaController::class, 'topPurchasedFormulas'])->name('welcome');
+Route::get('/formulas', [FormulaController::class, 'formulaPage'])->name('user.formula.index');
+Route::get('/formula/{id}', [FormulaController::class, 'show'])->name('formula.profile');
+
 
 // Include Breeze Authentication Routes
 require __DIR__ . '/auth.php';

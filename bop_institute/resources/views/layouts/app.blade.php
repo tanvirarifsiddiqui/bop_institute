@@ -9,7 +9,7 @@
 
     <!-- Fonts and Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet"> <!-- Ensuring styles.css is included -->
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet"> <!-- Custom styles -->
 </head>
 <body>
 <!-- Top Navigation -->
@@ -20,7 +20,7 @@
     @include('layouts.left_nav')
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="main-content flex-grow-1 p-4">
         <main>
             @yield('content')
         </main>
@@ -32,5 +32,6 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/custom.js') }}"></script> <!-- Ensure any custom JS is included -->
 </body>
 </html>
