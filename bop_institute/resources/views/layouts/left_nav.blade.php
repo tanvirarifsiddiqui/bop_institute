@@ -121,15 +121,20 @@
 <script>
     const sidebar = document.getElementById('sidebar');
     const toggleSidebar = document.getElementById('toggleSidebar');
+    const mainContent = document.getElementById('mainContent');
 
+    // Toggle sidebar visibility
     toggleSidebar.addEventListener('click', () => {
-        sidebar.style.transform = sidebar.style.transform === 'translateX(-250px)' ? 'translateX(0)' : 'translateX(-250px)';
+        const isCollapsed = sidebar.style.transform === 'translateX(-250px)';
+        sidebar.style.transform = isCollapsed ? 'translateX(0)' : 'translateX(-250px)';
     });
 
-    // Ensure the sidebar is always visible on larger screens
+    // Ensure sidebar visibility on larger screens
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
             sidebar.style.transform = 'translateX(0)';
+        } else {
+            sidebar.style.transform = 'translateX(-250px)';
         }
     });
 </script>
