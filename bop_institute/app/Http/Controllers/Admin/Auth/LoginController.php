@@ -44,4 +44,9 @@ class LoginController extends Controller
 
         return redirect('/admin/login');
     }
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect()->intended('/dashboard'); // Redirect to intended URL after login
+    }
+
 }

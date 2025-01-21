@@ -15,7 +15,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     // User Dashboard
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return redirect('/'); // Or another fallback route
     })->name('dashboard');
 
     // Profile Management
@@ -61,8 +61,27 @@ Route::prefix('admin')
 Route::get('/', [FormulaController::class, 'topPurchasedFormulas'])->name('welcome');
 Route::get('/formulas', [FormulaController::class, 'formulaPage'])->name('user.formula.index');
 Route::get('/formula/{id}', [FormulaController::class, 'show'])->name('formula.profile');
+Route::get('/sidebar', [FormulaController::class, 'showSidebar'])->name('sidebar');
+
+
+//about
+Route::get('/about', function () {
+    return view('about');
+});
+
+//about
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+// Purchase Route
+Route::middleware(['auth'])->group(function () {
+    Route::get('/formula/{id}/purchase', [FormulaController::class, 'purchasePage'])->name('formula.purchase');
+    Route::post('/formula/{id}/purchase', [FormulaController::class, 'processPurchase'])->name('formula.processPurchase');
+});
 
 
 // Include Breeze Authentication Routes
 require __DIR__ . '/auth.php';
 require __DIR__ . '/admin-auth.php';
+

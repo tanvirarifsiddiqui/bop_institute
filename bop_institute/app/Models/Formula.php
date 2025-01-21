@@ -10,4 +10,9 @@ class Formula extends Model
     use HasFactory;
     protected $fillable = ['title','description', 'image', 'price', 'discount', 'pdf','purchase', 'category_id'];
 
+    // Define inverse relationship to categories
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -126,6 +126,13 @@ class FormulaController extends Controller
         $categories = Category::with('formulas')->get();
         return view('formula.index', compact('categories'));
     }
+    public function showSidebar()
+    {
+        // Fetch categories with their formulas
+        $categories = Category::with('formulas')->get();
+
+        return view('sidebar', compact('categories'));
+    }
 
     public function show($id)
     {
@@ -134,5 +141,21 @@ class FormulaController extends Controller
         return view('formula.profile', compact('formula'));
     }
 
+
+    public function purchasePage($id)
+    {
+        $formula = Formula::findOrFail($id);
+        return view('formula.purchase', compact('formula'));
+    }
+
+    public function processPurchase(Request $request, $id)
+    {
+        $formula = Formula::findOrFail($id);
+
+        // Process purchase logic here (e.g., payment gateway integration)
+
+        // todo:Example: Redirect after a successful purchase
+        return redirect()->route('welcome')->with('success', 'Purchase successful! You can now access the formula.');
+    }
 
 }

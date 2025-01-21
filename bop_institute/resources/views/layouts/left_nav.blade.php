@@ -1,61 +1,79 @@
 <div id="sidebar" class="d-flex flex-column bg-light p-3 side-nav" style="width: 250px; transition: transform 0.3s ease-in-out;">
-
     <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="#" class="nav-link active">
+        <!-- Fixed Sidebar Items -->
+        <li class="nav-item mb-3">
+            <a href="{{ url('/') }}" class="nav-link active d-flex align-items-center">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                Home
+                <span>Home</span>
             </a>
         </li>
 
-        <!-- Accordion Section -->
-        <li>
-            <div class="accordion" id="mainAccordion">
-                @php
-                    $sections = [
-                        'Offline Courses' => [
-                            'Cosmetic and Toiletries Products',
-                            'Cleaning Items',
-                            'Veterinary Medicine Products',
-                            'Herbal Cosmetic Products',
-                            'Textile Chemicals and Auxiliaries',
-                            'Industrial Chemicals',
-                            'Automobile Products',
-                            'Adhesive Products',
-                            'Paint Items',
-                            'Food Products',
-                            'Tobacco Products',
-                            'Construction Products',
-                            'Software Development',
-                            'Android and iOS Apps Development'
-                        ],
-                        'Online Courses' => [
-                            // Same content as above or modify as required
-                        ],
-                        'Lab Testing' => ['Lab 1', 'Lab 2', 'Lab 3'],
-                        'Formula Books' => ['Formula 1', 'Formula 2', 'Formula 3'],
-                        'Software' => ['Software 1', 'Software 2', 'Software 3']
-                    ];
-                @endphp
+        <!-- Offline Courses -->
+        <li class="nav-item mb-3">
+            <a href="#" class="nav-link d-flex align-items-center">
+                <i class="fas fa-chalkboard-teacher me-2"></i>
+                <span>Offline Courses</span>
+            </a>
+        </li>
 
-                @foreach($sections as $section => $items)
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ Str::slug($section) }}" aria-expanded="false">
-                                {{ $section }}
-                            </button>
-                        </h2>
-                        <div id="{{ Str::slug($section) }}" class="accordion-collapse collapse">
-                            <ul class="list-group list-group-flush custom-list">
-                                @foreach($items as $item)
-                                    <li class="list-group-item"><span>{{ $item }}</span></li>
-                                @endforeach
-                            </ul>
-                        </div>
+        <!-- Online Courses -->
+        <li class="nav-item mb-3">
+            <a href="#" class="nav-link d-flex align-items-center">
+                <i class="fas fa-laptop-code me-2"></i>
+                <span>Online Courses</span>
+            </a>
+        </li>
+
+        <!-- Lab Testing -->
+        <li class="nav-item mb-3">
+            <a href="#" class="nav-link d-flex align-items-center">
+                <i class="fas fa-vials me-2"></i>
+                <span>Lab Testing</span>
+            </a>
+        </li>
+
+        <!-- Formula Books (Dynamic) -->
+        <li class="nav-item mb-3">
+            <div class="accordion" id="formulaBooksAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#formula-books" aria-expanded="false">
+                            <i class="fas fa-book me-2"></i>
+                            <span>Formula Books</span>
+                        </button>
+                    </h2>
+                    <div id="formula-books" class="accordion-collapse collapse">
+                        <ul class="list-group list-group-flush custom-list">
+                            @foreach($categories as $category)
+                                <li class="list-group-item">
+                                    <button class="btn text-start w-100 d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#category-{{ $category->id }}">
+                                        {{ $category->name }}
+                                    </button>
+                                    <ul class="collapse mt-2 ps-3" id="category-{{ $category->id }}">
+                                        @if($category->formulas->isNotEmpty())
+                                            @foreach($category->formulas as $formula)
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <a href="{{ route('formula.profile', $formula->id) }}" class="text-decoration-none">{{ $formula->title }}</a>
+                                                </li>
+                                            @endforeach
+                                        @else
+                                            <li class="list-group-item">No formulas available</li>
+                                        @endif
+                                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
-                @endforeach
+                </div>
             </div>
         </li>
-        <!-- End Accordion Section -->
+
+        <!-- Software -->
+        <li class="nav-item mb-3">
+            <a href="#" class="nav-link d-flex align-items-center">
+                <i class="fas fa-laptop me-2"></i>
+                <span>Software</span>
+            </a>
+        </li>
     </ul>
 </div>

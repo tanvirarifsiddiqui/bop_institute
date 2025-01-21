@@ -20,7 +20,7 @@
                     </li>
                     <li>
                         <i class="fas fa-envelope me-2"></i>
-                        <a href="mailto:info@bopbd.com" class="text-light text-decoration-none">info@bopbd.com</a>
+                        <a href="mailto:bopinstitute.info@gmail.com" class="text-light text-decoration-none">bopinstitute.info@gmail.com</a>
                     </li>
                 </ul>
             </div>
@@ -39,7 +39,7 @@
                     <li><a href="https://x.com/BOPBD168336?t=BCDxImAXqt1ql8N34ov3Sw&s=09" class="text-light text-decoration-none">Twitter</a></li>
                     <li><a href="https://www.facebook.com/bopbd.com.bd?mibextid=ZbWKwL" class="text-light text-decoration-none">Facebook</a></li>
                     <li><a href="https://www.youtube.com/@BOPINSTITUTE" class="text-light text-decoration-none">Youtube</a></li>
-                    <li><a href="https://www.bopbd.com/en/contact" class="text-light text-decoration-none">Contact Us</a></li>
+                    <li><a href="/contact" class="text-light text-decoration-none">Contact Us</a></li>
                 </ul>
             </div>
             <!-- Legal Section -->
