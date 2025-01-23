@@ -45,15 +45,15 @@
                     <div id="formula-books" class="accordion-collapse collapse">
                         <ul class="list-group list-group-flush custom-list">
                             @foreach($categories as $category)
-                                <li class="list-group-item">
-                                    <button class="btn text-start w-100 d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#category-{{ $category->id }}">
+                                <li class="list-group-item-primary" >
+                                    <button  class="btn text-start w-100 d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#category-{{ $category->id }}">
                                         {{ $category->name }}
                                     </button>
                                     <ul class="collapse mt-2 ps-3" id="category-{{ $category->id }}">
                                         @if($category->formulas->isNotEmpty())
                                             @foreach($category->formulas as $formula)
                                                 <li class="list-group-item d-flex align-items-center">
-                                                    <a href="{{ route('formula.profile', $formula->id) }}" class="text-decoration-none">{{ $formula->title }}</a>
+                                                    <a href="{{ route('formula.profile', $formula->id) }}" class="text-decoration-none" style="font-size: 10px">{{ $formula->title }}</a>
                                                 </li>
                                             @endforeach
                                         @else

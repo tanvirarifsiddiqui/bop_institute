@@ -153,9 +153,7 @@ class FormulaController extends Controller
         $formula = Formula::findOrFail($id);
 
         // Process purchase logic here (e.g., payment gateway integration)
-
-        // todo:Example: Redirect after a successful purchase
-        return redirect()->route('welcome')->with('success', 'Purchase successful! You can now access the formula.');
+        return redirect()->route('payment.bkash', ['formula_id' => $formula->id]);
     }
 
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormulaController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,14 @@ Route::prefix('admin')
             Route::put('/{formula}', [FormulaController::class, 'update'])->name('update');
             Route::delete('/{formula}', [FormulaController::class, 'destroy'])->name('destroy');
         });
+
+        //search payment
+        Route::get('/bkash/search/{trxID}', [App\Http\Controllers\BkashTokenizePaymentController::class,'searchTnx'])->name('bkash-serach');
+
+        //refund payment routes
+        Route::get('/bkash/refund', [App\Http\Controllers\BkashTokenizePaymentController::class,'refund'])->name('bkash-refund');
+        Route::get('/bkash/refund/status', [App\Http\Controllers\BkashTokenizePaymentController::class,'refundStatus'])->name('bkash-refund-status');
+
     });
 
 
@@ -78,7 +87,17 @@ Route::get('/contact', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/formula/{id}/purchase', [FormulaController::class, 'purchasePage'])->name('formula.purchase');
     Route::post('/formula/{id}/purchase', [FormulaController::class, 'processPurchase'])->name('formula.processPurchase');
+
+    // bKash Payment Routes
+    Route::get('/payment/bkash', [PaymentController::class, 'showBkashPaymentPage'])->name('payment.bkash');
+    Route::post('/payment/bkash/process', [PaymentController::class, 'processBkashPayment'])->name('payment.bkash.process');
+
+    Route::get('/bkash/payment', [App\Http\Controllers\BkashTokenizePaymentController::class,'index']);
+    Route::post('/bkash/create-payment', [App\Http\Controllers\BkashTokenizePaymentController::class,'createPayment'])->name('bkash-create-payment');
+    Route::get('/bkash/callback', [App\Http\Controllers\BkashTokenizePaymentController::class,'callBack'])->name('bkash-callBack');
+
 });
+
 
 
 // Include Breeze Authentication Routes
