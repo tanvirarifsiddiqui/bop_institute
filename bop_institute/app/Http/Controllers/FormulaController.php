@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Models\Formula;
 use Illuminate\Support\Facades\Storage;
@@ -155,5 +156,34 @@ class FormulaController extends Controller
         // Process purchase logic here (e.g., payment gateway integration)
         return redirect()->route('payment.bkash', ['formula_id' => $formula->id]);
     }
+
+    public function downloadPDF($paymentId)
+    {
+        // Find the payment record by paymentId
+        $payment = Payment::where('payment_id', $paymentId)->first();
+
+        if (!$payment) {
+            return redirect()->back()->with('error', 'Payment record not found.');
+        }
+
+        // Get the formula associated with the payment
+        $formula = Formula::find($payment->formula_id);
+
+        if (!$formula) {
+            return redirect()->back()->with('error', 'Formula not found.');
+        }
+
+        // Get the PDF path
+        $pdfPath = $formula->pdf;
+
+        // Ensure the file exists in storage
+        if (!Storage::exists("private/{$pdfPath}")) {
+            return redirect()->back()->with('error', 'PDF file not found.');
+        }
+
+        // Serve the PDF for download
+        return Storage::download("private/{$pdfPath}");
+    }
+
 
 }
