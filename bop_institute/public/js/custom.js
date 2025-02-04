@@ -15,3 +15,21 @@ window.addEventListener('resize', () => {
         sidebar.style.transform = 'translateX(-250px)';
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".formula-carousel");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+
+    // Scroll left
+    prevBtn.addEventListener("click", function () {
+        carousel.scrollBy({ left: -200, behavior: "smooth" });
+    });
+
+    // Scroll right
+    nextBtn.addEventListener("click", function () {
+        carousel.scrollBy({ left: 200, behavior: "smooth" });
+    });
+});
+
+

@@ -10,8 +10,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Brand Name -->
-        <a class="navbar-brand fw-bold" href="/">BOP Institute</a>
+        <!-- Brand Name with Logo -->
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+            <img src="{{ asset('images/logo.jpeg') }}" alt="Logo" style="height: 30px; width: auto; margin-right: 8px;">
+            BOP Institute
+        </a>
+
 
         <!-- Right Navbar Toggle Button -->
         <button
@@ -33,19 +37,19 @@
                     <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/courses">Courses</a>
+                    <a class="nav-link " href="/coming-soon">Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/lab-testing">Lab Testing</a>
+                    <a class="nav-link " href="/coming-soon">Lab Testing</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/formulas">Formula Book</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/software">Software</a>
+                    <a class="nav-link " href="/coming-soon">Software</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/gallery">Gallery</a>
+                    <a class="nav-link " href="/coming-soon">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/about">About Us</a>
@@ -98,7 +102,8 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('login') }}">Login</a>
+{{--                        <a class="nav-link text-light" href="{{ route('login') }}">Login</a>--}}
+                        <a class="nav-link text-light" href="{{ route('coming-soon') }}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('register') }}">Register</a>

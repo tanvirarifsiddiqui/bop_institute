@@ -24,7 +24,8 @@
                         <h4 class="text-primary fw-bold">${{ number_format($formula->price, 2) }}</h4>
                     @endif
                 </div>
-                <a href="{{ route('formula.purchase', $formula->id) }}"
+{{--                <a href="{{ route('formula.purchase', $formula->id) }}"--}}
+                <a href="{{ route('coming-soon', $formula->id) }}"
                    class="btn btn-primary btn-lg">
                     Purchase
                 </a>

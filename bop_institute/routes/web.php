@@ -102,6 +102,7 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
+Route::view('/coming-soon', 'coming')->name('coming-soon');
 
 
 // Include Breeze Authentication Routes

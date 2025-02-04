@@ -34,33 +34,19 @@
                 <div class="card shadow-lg border-0 p-4" style="background-color: #f8f9fa;">
                     <div class="card-body">
                         <h2 class="text-center text-primary">EXPLORE OUR FORMULA BOOKS</h2>
-                        <p class="text-center">Discover a wide range of chemical formulations tailored to your needs.</p>
                         <hr>
-                        <div class="row">
-                            @foreach($topPurchasedFormulas as $formula)
-                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                                    <div class="card formula-card shadow-sm border-0">
-                                        <img src="{{ asset('storage/' . $formula->image) }}" class="card-img-top" alt="{{ $formula->title }}">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title">{{ $formula->title }}</h5>
-                                            <p class="card-text">{{ Str::limit($formula->description, 50) }}</p>
 
-                                            <!-- Pricing Logic -->
-                                            @php
-                                                $discountAmount = $formula->price * ($formula->discount / 100);
-                                                $finalPrice = $formula->price - $discountAmount;
-                                            @endphp
-                                            <p class="card-text">
-                                                <strong class="text-muted" style="text-decoration: line-through;">${{ number_format($formula->price, 2) }}</strong>
-                                                <strong class="text-success"> ${{ number_format($finalPrice, 2) }}</strong>
-                                            </p>
-
-                                            <!-- Purchase Button -->
-                                            <a href="#" class="btn btn-purchase">Purchase</a>
-                                        </div>
+                        <!-- Custom Formula Carousel -->
+                        <div class="formula-carousel-container">
+                            <button class="carousel-btn prev-btn">&lt;</button>
+                            <div class="formula-carousel">
+                                @foreach ($topPurchasedFormulas as $formula)
+                                    <div class="formula-item">
+                                        <x-formula-card :formula="$formula" />
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+                            <button class="carousel-btn next-btn">&gt;</button>
                         </div>
 
                         <!-- More Explore Section -->
@@ -71,6 +57,7 @@
                 </div>
             </div>
         </div>
+
 
     </div>
 @endsection
