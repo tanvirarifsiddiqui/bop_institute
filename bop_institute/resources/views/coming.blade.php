@@ -131,7 +131,7 @@
 <!-- Countdown Timer Script -->
 <script>
     const countdown = () => {
-        const targetDate = new Date('2025-03-01T00:00:00').getTime(); // Set your launch date here
+        const targetDate = new Date('2025-04-01T00:00:00').getTime(); // Set your launch date here
         const now = new Date().getTime();
         const timeLeft = targetDate - now;
 

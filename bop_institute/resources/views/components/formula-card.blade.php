@@ -2,7 +2,7 @@
     <!-- Image Container with A4 Aspect Ratio -->
     <div class="position-relative">
         <div class="a4-image-container">
-            <img src="{{ asset('storage/' . $formula->image) }}"
+            <img src="{{ asset('uploads/' . $formula->image) }}"
                  alt="{{ $formula->title }}"
                  class="a4-image">
         </div>

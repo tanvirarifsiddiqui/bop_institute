@@ -1,0 +1,115 @@
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/bopinstitute/.ssh/id_rsa.
+Your public key has been saved in /home/bopinstitute/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:NYIVRq56qSelxlbILA+T9nVdO5r0T+ulmC8VlccD1xM
+The key's randomart image is:
++---[RSA 2048]----+
+|       .=.   ..E+|
+|       =      .+=|
+|      . o o    .+|
+|       . o .. .  |
+|   + .. S. . . . |
+|  * +.+.. o o .  |
+| . B.=o. . + o. .|
+|    Oo.   o o+ + |
+|   o.o      o=*  |
++----[SHA256]-----+
+
+Public Key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD66VByMUCWJYG6GImEbah5IwlA/XYWNn7Br1f5JRSBpWRAz8LMs7Vuog7KwUDNbnRN4Ho7U72m+hE0yQaTqpL8Fj3UWJJC8eyfKaQVDFOpiumjvZow+BXmwWAewTKn5jTGCjyILRAGy58od7pW6XJmoLYElCxcNLIClFSJi5y2FqN8jmqVLz6GKo7buPxDBL5kXFzsi6S2tFU3xGFoCbk0v76Ti8lkyZ9gSZjQ/I8Y4hQ1U7DrMPpU8EBYjDg8PErUi5mFO1LvPIS4g7+/dtLspET+b8g6y7A6wBZMPdJ3Tz4mSC2G6yWJqDYfVhX/R+VF12n8HSq/e4dc3/mwS+ML
+
+Private Key:
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBappHeIv
+pumuOlp9817wo5AAAAEAAAAAEAAAEXAAAAB3NzaC1yc2EAAAADAQABAAABAQD66VByMUCW
+JYG6GImEbah5IwlA/XYWNn7Br1f5JRSBpWRAz8LMs7Vuog7KwUDNbnRN4Ho7U72m+hE0yQ
+aTqpL8Fj3UWJJC8eyfKaQVDFOpiumjvZow+BXmwWAewTKn5jTGCjyILRAGy58od7pW6XJm
+oLYElCxcNLIClFSJi5y2FqN8jmqVLz6GKo7buPxDBL5kXFzsi6S2tFU3xGFoCbk0v76Ti8
+lkyZ9gSZjQ/I8Y4hQ1U7DrMPpU8EBYjDg8PErUi5mFO1LvPIS4g7+/dtLspET+b8g6y7A6
+wBZMPdJ3Tz4mSC2G6yWJqDYfVhX/R+VF12n8HSq/e4dc3/mwS+MLAAADwI2cI0LkDRaLye
+8SQuGDx3/QVNl0EDdkCIMc4MSulCKzwTsbEr84gCT+WLdULqVMQrQEyir/Ius7DCfDGV06
+Sc8pi2ZkttSlFzOFZqDKGEA9+qXP9+cXxbzNH3p/5eNxrFUvzFe05ow+jzAvmusr5dIi1L
+/VuBC7IwHKDhVCM/Qzc4fENCh/10MN23hpcm2O+pj9hBMUwS3QcsUhY70W0fWCSUllFDbB
+S6rjqLQRxOqGIKRDxYJl6SHIisryfrXFvSuStjj3+nJpB3JidUiDicJ5rgmCugPcm+yHLR
+uAeQ5wBCLzghjYRUVKDfA2533vHlIxjII5nvw+SsDfKUn/oU/qZY2SfN1NsLK/TrSmDmAU
+kloWQADE+P5HE42p8IQAPR/dxgxiK0i6S9s4/mOqYa8b9mtIof88az/JqtnWS+i9A3tqj6
+2pWPcW8+XguxyWXnYmXnEuHDb24Z9VdWyitRG4/SOg9+G41eL88sdyUPHIFfb41ty/AgrL
+xg3FTBzKVO/iVvVgCzq9HRU6GMEZ+/DZm6uIE+tY/CwmXZxu1y6wXdaprxQuGr1UH2TpiG
+AlfUAPCsQYxwjH4ff2qww6YkjMX8Two8EtVrFzvfrrbt9PL8eMhPKuOcgPMgi/SNuOqvYC
+oR7U8L8yTsz0dJiV5jMFhc9P4SbS04Wh1XoSh3XPPWFobVZNw3nbIlzGuvF059pVV0/pHq
+qKnr6S5VFRtXVxhzwbqyGslpqf4DCzHx7rSopS09kRi6j604yrKk14mrCgVoaIXaaY+IJu
+quLW+8IT7KgMf/sTRVk25H+TMRuT0bwwQVdpFy919Aftc2ydLjp6RzYiWzQDbvUFQakTwq
+0mG8cXmalhmNiQckUvvkNpyqj6CFJihIxiIMvFQsfRU5+H/zfaPjvdplTYjmWO91uO2YLw
+1esh79AqWSahTADlQ2Ho8ROJTaqUux9gW2ZpTbWECwuPrz2YfJIH/H1camHNdk3xtqSDsl
+3UZIWHKH5scaj24nJJUYomK0sCnKk6Z4fI0++xyTqlD4UoY17PaDpYZmWYsxKagsnycy91
++/pqKvc18eO7idPkYpz5H8hwHJBThvQjAEE1Q7tJsPdSdnT0gszazMJAaqFP/5CG5db4Do
+mCexf0uhSKPT3B20VSChNkZ0NsyYLTqrhPAZgo8FckrkSumrNGdnVWLxm4OBYfUTaEuPf0
++fNWp+eca3X9zR3GRrB4N4Npihnz2mucoopaV6VGZ4JS1aDttjetTlXlBpC3UEdZM2j/BU
+Mz8JSa6Q==
+-----END OPENSSH PRIVATE KEY-----
+
+PPK Key: PuTTY-User-Key-File-3: ssh-rsa
+         Encryption: aes256-cbc
+         Comment:
+         Public-Lines: 6
+         AAAAB3NzaC1yc2EAAAADAQABAAABAQD66VByMUCWJYG6GImEbah5IwlA/XYWNn7B
+         r1f5JRSBpWRAz8LMs7Vuog7KwUDNbnRN4Ho7U72m+hE0yQaTqpL8Fj3UWJJC8eyf
+         KaQVDFOpiumjvZow+BXmwWAewTKn5jTGCjyILRAGy58od7pW6XJmoLYElCxcNLIC
+         lFSJi5y2FqN8jmqVLz6GKo7buPxDBL5kXFzsi6S2tFU3xGFoCbk0v76Ti8lkyZ9g
+         SZjQ/I8Y4hQ1U7DrMPpU8EBYjDg8PErUi5mFO1LvPIS4g7+/dtLspET+b8g6y7A6
+         wBZMPdJ3Tz4mSC2G6yWJqDYfVhX/R+VF12n8HSq/e4dc3/mwS+ML
+         Key-Derivation: Argon2id
+         Argon2-Memory: 8192
+         Argon2-Passes: 8
+         Argon2-Parallelism: 1
+         Argon2-Salt: 5a07ec3761cede46d8d9b645b194ec46
+         Private-Lines: 14
+         7e4cOhmGnY6c7dGAJbJE8xDacYVZl4DHibT/se96SgMn5OoqIO8C1pMN9A52H6h8
+         hXd8vmFfllN0LvsQEeYALO8QYe9V6l9CeyeLmLvCfEQdTnzrw6Sjh1DD1dR9fFDH
+         hwc9RDif0n63H/DSOYxUea/B/56w6v2UflgeRpFJ+IZ4doZpdVC6MkPT3NF9plpz
+         V6b5FRG+TKGV4RHyBwElArE6rOXiu4VSVx3wy3NIn4ceWcHUXcW8N5F3fccrO7KX
+         15CqgThTbjD+mAZLBbl45o7E6S8DrRo7ZnkH0FfwGhF+RvujtPKamx4nX9buLneH
+         URU9lekuSTVYjTLtT0mfYFqI3cqPuBejQDgoylCSs8ejfX7l3/UciuHDW2cGGfE/
+         zIsXgGsqgUfkasTnbVWYE82x6W1JFehhF+SLHiFgfzoZbtAWVfJLRL1fWYLY7r/9
+         ccT7CXN5v4Ut2k87OKsLa0gUvvBhEUl5+++HD39qthQlI9JjKHkxHN13Er4Vt1Fx
+         Ro42yaJ5jAPhWlBTPcunv4dJYcEbR2PT0reobybbRdN3oPtrhXqUwuYwxHDcfCfQ
+         4TwO5Q5C/X1Zi2kqiFn7h5KbHHNGA48tx0z567qNDpZ9cL2ORMFFCzuPeU5Ho/oE
+         L5NDkXhpbxxVONIaY5I6ZoTIc7b36/GQ4Me768DagKqUbUM2fn1JoWn4YsKlSQqQ
+         TOOusJ+e1kte+w1bWG/tbMA4Zc5Zo/0J4yXP9MCrHXpXkzKB1wh97dybLxlVFjAE
+         bn4PM8XDstI+co52BH6qudulJlVSgLLnBA/DukpxnRoAIn4859f7OODez7DN4Mtr
+         Q6ohD1iJRFoJBQNGH2GR+skYEOUFL2jqmyAL7lU/yU6IwQIS4m6xyIhOmaJszaY8
+         Private-MAC: 569117f33afe52110d965d07082bfed775c3d3315e1719e48f4a08fed049db80
+
+
+email: bopinstitute.info@gmail.com
+
+Server private key: -----BEGIN RSA PRIVATE KEY-----
+                    MIIEowIBAAKCAQEAnfPsd70EIpUN+2gi2WUrTxl3c/PdWOjBMStjmXi0BeQbGU0P
+                    HXb34FTMQtkf0ihdM87MtqDhhABZNbgtR5gXKwhM1M1KivMFEMWuiAPJsn2TKfCA
+                    DkN4Y/n21ZpAK6VK1woRKlLItxFAf0o6n5H64po4rKFISulTZL+mTDE2inkXvQhs
+                    89LOGnIgaQYuXh3cv2eahcCYxbZ9dGSeJQzSYCGT/XHcet26DkwpffGI4NbtjSj7
+                    pN4se7nYFHiw4E+CbwfI2giGu0oy2+zP5CKEN+fOslJGWHHfjdl7TWLS8BTERndH
+                    tPDyShQRl7P+mHegyBxviCC7LKo/NpPE3agKPwIDAQABAoIBAB82EeXfLa//sBGb
+                    lDdM7G/m4lnBOF3XMEWdA0NSPJBlcI1hUrlJxtVHLE2RRd5rJ2+TT5RO2gERaI9a
+                    42egQAO60iPCpRYryzZzOXea+AITGj9RTJyE7Ick34d5wXBeaxlu3dF1JkA2Yn5E
+                    lqztVZvtSYGjJPvYeygPTrcDinl2AKf9x5JKkLsZRJ/tG29cYZT9IU13dr/fL6A7
+                    H7XOqEEyDnndvtzIHJkDpt5HQKKMnUgCQndckDd5vX9tSVPNUpIfCQSevQBEeUUE
+                    wmGKMu7mdrGU0PpRg5c3L7SvYJxwte1XueqKrXeUQvuC9Xmeze/5K7yizduA3qnR
+                    4ytH8YECgYEAyoD6xOV4DxJ5T5MQXQD51CvvinM23Kh99ijQrk8G8ddAuZnXJ1cx
+                    Q5R7gri3dpeiUMTo4S/atXy5blm05aJdvxZNidiYGT0G8GcCfC1rmCv7YPD51ys7
+                    hw+aK1qRgUSUuetQ1lkwepGnO1s86Nhj4AjAPEgg3AgT5ISyeZkZEx8CgYEAx64H
+                    axbQCAXCBf0vl/KDkzRAJvPNiTQ7gPD8CcDxURk4eQ0iGzZvMXZKlbtC3rvqkEa8
+                    wMueOEAoroATrsEJANZNxkR1arSs80ZXLvBO2id+FwLJ0H5U8ui0SHqGka70CKep
+                    Fi54eJ/q8qDFWRv+keuyyo+JXtce3wKuoMM2ROECgYEAkIpDc+q+KTPsdsnnshqS
+                    N8ksb0wRaqqxTdSQLvqlYFVeE5wlICVyOmRvTD0AZpuQ9cm215TKrSPbT1KkdgvQ
+                    kiYfLjb1SX5vx4QfF/drhvBNu0IFcnmfQaX3St6YYQZMie/WgUij+7ie/xT+gsyB
+                    bVWRsPVizurNGB1HLtgCN80CgYBGgCBoZAaRPo8xlCIQsPRZrfIUjrH8BnAX533l
+                    Z7UMIC57NvLazs5VlWFiGlrSz2BTDlaob3vuemCis9+/LLKkFAYjwZn/Uclan3Q6
+                    w2fjyFvRfg+JSIFvvk+g43nNyAqrX57okQHB/Rx0C+WBv8uS87gNor4quSNSM906
+                    L5JioQKBgA7uQAxNFxCZaIukgO1m2oCc042XOEKNGdY0zCxaO5ERRsr0Wn80Mafm
+                    vP7GXYbJ/vwhxooZHq6JWYWrtngRXRweXzMWy/rS6Ywh5ZbXVgHFauAgS4UO7cuH
+                    3iedmbDhtQpt4wqGMrJXyf+iXRPWl2L5OOu2wmpKghy+s5RUuzME
+                    -----END RSA PRIVATE KEY-----
+

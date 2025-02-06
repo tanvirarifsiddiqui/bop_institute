@@ -72,6 +72,10 @@ Route::get('/formulas', [FormulaController::class, 'formulaPage'])->name('user.f
 Route::get('/formula/{id}', [FormulaController::class, 'show'])->name('formula.profile');
 Route::get('/sidebar', [FormulaController::class, 'showSidebar'])->name('sidebar');
 
+//guest formula image
+Route::get('/formula/image/{id}', [FormulaController::class, 'viewImage']);
+
+
 
 //about
 Route::get('/about', function () {
@@ -93,7 +97,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/payment/bkash/process', [PaymentController::class, 'processBkashPayment'])->name('payment.bkash.process');
 
     Route::get('/bkash/payment', [App\Http\Controllers\BkashTokenizePaymentController::class,'index']);
-    Route::post('/bkash/create-payment', [App\Http\Controllers\BkashTokenizePaymentController::class,'createPayment'])->name('bkash-create-payment');
+//    Route::post('/bkash/create-payment', [App\Http\Controllers\BkashTokenizePaymentController::class,'createPayment'])->name('bkash-create-payment');
     Route::get('/bkash/callback', [App\Http\Controllers\BkashTokenizePaymentController::class,'callBack'])->name('bkash-callBack');
     Route::get('/formula/download/{paymentId}', [FormulaController::class, 'downloadPDF'])->name('formula.download');
 

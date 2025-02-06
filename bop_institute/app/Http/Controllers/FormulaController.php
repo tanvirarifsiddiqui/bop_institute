@@ -33,7 +33,7 @@ class FormulaController extends Controller
 
         // Handle PDF Upload
         if ($request->hasFile('pdf')) {
-            $data['pdf'] = $request->file('pdf')->store('pdfs', 'private');
+            $data['pdf'] = $request->file('pdf')->store('pdfs', 'public');
         }
 
         // Handle Image Upload
@@ -43,7 +43,7 @@ class FormulaController extends Controller
 
        $newFormula = Formula::create($data);
 
-       return redirect(route('admin.formulas.index'));
+       return redirect(route('admin.formulas.index'))->with('success', 'Formula Created Successfully');
     }
 
     public function edit(Formula $formula)
@@ -68,7 +68,7 @@ class FormulaController extends Controller
 
         // Handle PDF Upload
         if ($request->hasFile('pdf')) {
-            $data['pdf'] = $request->file('pdf')->store('pdfs', 'private');
+            $data['pdf'] = $request->file('pdf')->store('pdfs', 'public');
         }
 
         // Handle Image Upload
