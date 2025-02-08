@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ asset('storage/' . $formula->image) }}" alt="{{ $formula->title }}"
+                <img src="{{ asset('uploads/' . $formula->image) }}" alt="{{ $formula->title }}"
                      class="img-fluid rounded shadow" style="aspect-ratio: 8.5 / 11; object-fit: cover;">
             </div>
             <div class="col-md-8">

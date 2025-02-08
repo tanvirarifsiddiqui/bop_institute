@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 // Admin Guest Routes
 Route::prefix('admin')
     ->name('admin.')
-    ->middleware('guest:admin')
+    ->middleware('guest:admin') // For Laravel 9+
     ->group(function () {
         Route::get('register', [RegisteredAdminController::class, 'create'])->name('register');
         Route::post('register', [RegisteredAdminController::class, 'store']);
