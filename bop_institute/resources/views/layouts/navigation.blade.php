@@ -102,8 +102,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-{{--                        <a class="nav-link text-light" href="{{ route('login') }}">Login</a>--}}
-                        <a class="nav-link text-light" href="{{ route('coming-soon') }}">Login</a>
+                        <a class="nav-link text-light" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('register') }}">Register</a>
