@@ -26,10 +26,10 @@
         @endphp
         <div>
             @if ($formula->discount > 0)
-                <span class="text-muted text-decoration-line-through">${{ number_format($formula->price, 2) }}</span>
-                <span class="text-success fw-bold ms-2">${{ number_format($finalPrice, 2) }}</span>
+                <span class="text-muted text-decoration-line-through">৳{{ number_format($formula->price, 2) }}</span>
+                <span class="text-success fw-bold ms-2">৳{{ number_format($finalPrice, 2) }}</span>
             @else
-                <span class="text-primary fw-bold">${{ number_format($formula->price, 2) }}</span>
+                <span class="text-primary fw-bold">৳{{ number_format($formula->price, 2) }}</span>
             @endif
         </div>
     </div>

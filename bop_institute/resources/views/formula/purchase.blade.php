@@ -26,14 +26,14 @@
                                 @if ($formula->discount > 0)
                                     <h4>
                                     <span class="text-muted text-decoration-line-through">
-                                        ${{ number_format($formula->price, 2) }}
+                                        ৳{{ number_format($formula->price, 2) }}
                                     </span>
                                         <span class="text-success fw-bold ms-2">
-                                        ${{ number_format($finalPrice, 2) }}
+                                        ৳{{ number_format($finalPrice, 2) }}
                                     </span>
                                     </h4>
                                 @else
-                                    <h4 class="text-primary fw-bold">${{ number_format($formula->price, 2) }}</h4>
+                                    <h4 class="text-primary fw-bold">৳{{ number_format($formula->price, 2) }}</h4>
                                 @endif
                             </div>
                         </div>
