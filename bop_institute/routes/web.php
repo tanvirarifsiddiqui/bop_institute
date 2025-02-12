@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormulaController;
@@ -53,6 +54,15 @@ Route::prefix('admin')
             Route::get('/{formula}/edit', [FormulaController::class, 'edit'])->name('edit');
             Route::put('/{formula}', [FormulaController::class, 'update'])->name('update');
             Route::delete('/{formula}', [FormulaController::class, 'destroy'])->name('destroy');
+        });
+        Route::prefix('users')->name('users.')->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('index');
+            Route::get('/create', [UserController::class, 'create'])->name('create');
+            Route::post('/', [UserController::class, 'store'])->name('store');
+            Route::get('/{user}', [UserController::class, 'show'])->name('show');
+            Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
+            Route::put('/{user}', [UserController::class, 'update'])->name('update');
+            Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
         });
 
         //search payment
