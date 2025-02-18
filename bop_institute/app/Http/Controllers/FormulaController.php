@@ -141,6 +141,16 @@ class FormulaController extends Controller
 
         return view('formula.profile', compact('formula'));
     }
+    public function landingPage($id)
+    {
+        $formula = Formula::with('category')->findOrFail($id);
+        $relatedFormulas = Formula::where('category_id', $formula->category_id)
+            ->where('id', '!=', $id)
+            ->take(3)
+            ->get();
+
+        return view('formula.landingPage.landing', compact('formula', 'relatedFormulas'));
+    }
 
 
     public function purchasePage($id)

@@ -80,6 +80,7 @@ Route::prefix('admin')
 Route::get('/', [FormulaController::class, 'topPurchasedFormulas'])->name('welcome');
 Route::get('/formulas', [FormulaController::class, 'formulaPage'])->name('user.formula.index');
 Route::get('/formula/{id}', [FormulaController::class, 'show'])->name('formula.profile');
+Route::get('/formula/landing/{id}', [FormulaController::class, 'landingPage'])->name('formula.profile');
 Route::get('/sidebar', [FormulaController::class, 'showSidebar'])->name('sidebar');
 
 //guest formula image
