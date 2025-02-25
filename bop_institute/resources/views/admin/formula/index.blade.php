@@ -21,8 +21,9 @@
                 <th>PDF</th>
                 <th>Purchase</th>
                 <th>Category ID</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Edit</th>       <!-- Separate columns -->
+                <th>Delete</th>     <!-- for each action -->
+                <th>Landing Page</th>
             </tr>
             </thead>
             <tbody>
@@ -50,14 +51,20 @@
                     <td>{{ $formula->purchase }}</td>
                     <td>{{ $formula->category_id }}</td>
                     <td>
+                        <!-- Edit Button -->
                         <a href="{{ route('admin.formulas.edit', ['formula'=>$formula]) }}" class="btn btn-sm btn-primary">Edit</a>
                     </td>
                     <td>
-                        <form method="POST" action="{{ route('admin.formulas.destroy', ['formula'=>$formula]) }}">
+                        <!-- Delete Button -->
+                        <form method="POST" action="{{ route('admin.formulas.destroy', ['formula'=>$formula]) }}" onsubmit="return confirm('Are you sure you want to delete this formula?');">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
+                    </td>
+                    <td>
+                        <!-- Landing Page Button -->
+                        <a href="{{ route('formula.landing', $formula->id) }}" class="btn btn-sm btn-info" target="_blank">Landing Page</a>
                     </td>
                 </tr>
             @endforeach

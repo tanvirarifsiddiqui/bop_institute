@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'BOP Institute')</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
@@ -36,11 +36,14 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ route('admin.home') }}">BOP Institute</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
+                <!-- Existing tabs -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
                 </li>
@@ -49,6 +52,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
+                </li>
+                <!-- Add Inquiries Tab -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.inquiries.index') }}">Inquiries</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.users.index') }}">Users</a>
@@ -73,7 +80,7 @@
 </nav>
 
 <!-- Main Content -->
-<div class="content">
+<div class="container content">
     @yield('content')
 </div>
 

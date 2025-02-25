@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormulaController;
+use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -65,6 +66,15 @@ Route::prefix('admin')
             Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
         });
 
+        // Inquiry Management Routes
+        Route::prefix('inquiries')->name('inquiries.')->group(function () {
+            Route::get('/', [InquiryController::class, 'index'])->name('index');
+            Route::get('/{inquiry}', [InquiryController::class, 'show'])->name('show');
+            Route::post('/{inquiry}/approve', [InquiryController::class, 'approve'])->name('approve');
+            Route::post('/{inquiry}/reply', [InquiryController::class, 'reply'])->name('reply');
+            Route::delete('/{inquiry}', [InquiryController::class, 'destroy'])->name('destroy');
+        });
+
         //search payment
         Route::get('/bkash/search/{trxID}', [App\Http\Controllers\BkashTokenizePaymentController::class,'searchTnx'])->name('bkash-serach');
 
@@ -80,8 +90,10 @@ Route::prefix('admin')
 Route::get('/', [FormulaController::class, 'topPurchasedFormulas'])->name('welcome');
 Route::get('/formulas', [FormulaController::class, 'formulaPage'])->name('user.formula.index');
 Route::get('/formula/{id}', [FormulaController::class, 'show'])->name('formula.profile');
-Route::get('/formula/landing/{id}', [FormulaController::class, 'landingPage'])->name('formula.profile');
+//Route::get('/formula/landing/{id}', [FormulaController::class, 'landingPage'])->name('formula.profile');
+Route::get('/formula/landing/{id}', [FormulaController::class, 'landingPage'])->name('formula.landing');
 Route::get('/sidebar', [FormulaController::class, 'showSidebar'])->name('sidebar');
+Route::post('/formula/{id}/inquiry', [FormulaController::class, 'submitInquiry'])->name('formula.inquiry');
 
 //guest formula image
 Route::get('/formula/image/{id}', [FormulaController::class, 'viewImage']);

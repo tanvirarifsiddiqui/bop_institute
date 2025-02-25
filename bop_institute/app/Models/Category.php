@@ -14,4 +14,8 @@ class Category extends Model
     {
         return $this->hasMany(Formula::class);
     }
+    public function inquiries()
+    {
+        return $this->hasMany(Inquiry::class);
+    }
 }

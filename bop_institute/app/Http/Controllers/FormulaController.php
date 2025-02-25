@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\Inquiry;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Models\Formula;
@@ -143,15 +144,41 @@ class FormulaController extends Controller
     }
     public function landingPage($id)
     {
-        $formula = Formula::with('category')->findOrFail($id);
+        $formula = Formula::findOrFail($id);
+        $categories = Category::all();
         $relatedFormulas = Formula::where('category_id', $formula->category_id)
-            ->where('id', '!=', $id)
-            ->take(3)
+            ->where('id', '<>', $formula->id)
+            ->take(5)
             ->get();
 
-        return view('formula.landingPage.landing', compact('formula', 'relatedFormulas'));
+        // Fetch approved inquiries for FAQ
+        $faqs = Inquiry::where('formula_id', $id)
+            ->where('approved', true)
+            ->get();
+
+        return view('formula.landingPage.landing', compact('formula', 'categories', 'relatedFormulas', 'faqs'));
     }
 
+
+    public function submitInquiry(Request $request, $id)
+    {
+        $request->validate([
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|email',
+            'industry' => 'required|exists:categories,id',
+            'message'  => 'required|string',
+        ]);
+
+        Inquiry::create([
+            'formula_id'  => $id,
+            'name'        => $request->name,
+            'email'       => $request->email,
+            'category_id' => $request->industry,
+            'message'     => $request->message,
+        ]);
+
+        return redirect()->back()->with('success', 'Your inquiry has been submitted and is pending approval.');
+    }
 
     public function purchasePage($id)
     {
