@@ -120,7 +120,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body text-center">
                             <h3 class="h5">Instant Support</h3>
-                            <a href="https://wa.me/1234567890" class="btn btn-success btn-lg my-3 rounded-3">
+                            <a href="https://wa.me/+8801332548090" class="btn btn-success btn-lg my-3 rounded-3">
                                 <i class="bi bi-whatsapp"></i> WhatsApp Chat
                             </a>
                         </div>

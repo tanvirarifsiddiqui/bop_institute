@@ -1,0 +1,63 @@
+https://copilot.microsoft.com/chats/9G8L8vXXupBtRhUN4xEuc
+https://chatgpt.com/c/67bd522d-1088-8005-93b4-10e94d82238b
+our Institue name is bob institute.
+I want  to acknowledge you that, I have Already Created the website. where user can login and explore amar Science Formulations. our next step is to create course sections
+here I want to add Course Sections to my Laravel project.
+
+where will be 3 Type of courses (1. Long Course (Academic), 2. Short course (Non Academic Courses) 3. Industrial Attachment  Academic
+
+Requirements:
+Each Sections Have multiple Programs (category of courses), There should be a system CRUD for Programs.
+each program can have Specific Courses (Course ID (inputted by admin), Session, Course Name, Course Fee, Duration, Apply )
+Each course can be online or offline, which has total control of admin
+short course doesn't have any session,
+
+Tables:
+
+Institute
+
+Sections
+
+Programs
+
+Courses
+
+Enrollments
+
+Students
+
+Instructors
+
+User_Accounts
+
+Course_Sessions
+
+Course_Fees
+
+Course_Duration
+
+Online_Applications
+
+Relationships:
+Sections to Programs: One-to-Many (One section can have many programs)
+
+Programs to Courses: One-to-Many (One program can have many courses)
+
+Students to Enrollments: One-to-Many (One student can have many enrollments)
+
+Instructors to Courses: One-to-Many (One instructor can teach many courses)
+
+User_Accounts to Enrollments: One-to-Many (One user can have many enrollments)
+
+Courses to Course_Sessions: One-to-Many (One course can have many sessions)
+
+Courses to Course_Fees: One-to-One (Each course has one fee amount)
+
+Courses to Course_Duration: One-to-One (Each course has one duration)
+
+User_Accounts to Online_Applications: One-to-Many (One user can have many online applications)
+
+Courses to Online_Applications: One-to-Many (One course can have many online applications)
+
+
+based on your Reasoning Capabilities, provide a phase-by-phase guideline plan to develop this system. I will ask you for detailed information about each phase specifically. Right now just give me the planning.

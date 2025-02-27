@@ -148,7 +148,6 @@ class FormulaController extends Controller
         $categories = Category::all();
         $relatedFormulas = Formula::where('category_id', $formula->category_id)
             ->where('id', '<>', $formula->id)
-            ->take(5)
             ->get();
 
         // Fetch approved inquiries for FAQ
