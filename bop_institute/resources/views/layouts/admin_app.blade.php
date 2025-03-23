@@ -60,6 +60,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.users.index') }}">Users</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.course_management.index') }}">Course Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.student_registrations.index') }}">Student Registrations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.course_applications.index') }}">Course Applications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.bulk_enrollment.index') }}">Enrollments</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">

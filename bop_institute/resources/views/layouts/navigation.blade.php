@@ -16,7 +16,6 @@
             BOP Institute
         </a>
 
-
         <!-- Right Navbar Toggle Button -->
         <button
             class="navbar-toggler"
@@ -36,31 +35,71 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/coming-soon">Courses</a>
+                <li class="nav-item dropdown">
+{{--                    <a--}}
+{{--                        class="nav-link dropdown-toggle"--}}
+{{--                        href="#"--}}
+{{--                        id="coursesDropdown"--}}
+{{--                        role="button"--}}
+{{--                        data-bs-toggle="dropdown"--}}
+{{--                        aria-expanded="false"--}}
+{{--                    >--}}
+{{--                        Courses--}}
+{{--                    </a>--}}
+{{--                    <ul class="dropdown-menu" aria-labelledby="coursesDropdown">--}}
+{{--                        <li>--}}
+{{--                            <a class="dropdown-item" href="/courses">All Courses</a>--}}
+{{--                        </li>--}}
+{{--                        @foreach(\App\Models\CourseType::with('programs.courses')->get() as $courseType)--}}
+{{--                            <li class="dropdown-submenu">--}}
+{{--                                <a class="dropdown-item dropdown-toggle" href="#">{{ $courseType->name }}</a>--}}
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    @foreach($courseType->programs as $program)--}}
+{{--                                        <li class="dropdown-submenu">--}}
+{{--                                            <a class="dropdown-item dropdown-toggle" href="#">{{ $program->name }}</a>--}}
+{{--                                            <ul class="dropdown-menu">--}}
+{{--                                                @foreach($program->courses as $course)--}}
+{{--                                                    <li>--}}
+{{--                                                        <a class="dropdown-item" href="{{ route('course_application.select') }}">{{ $course->name }}</a>--}}
+{{--                                                    </li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                    @endforeach--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                        @endforeach--}}
+{{--                    </ul>--}}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/coming-soon">Lab Testing</a>
+                    <a class="nav-link" href="/courses">Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/formulas">Formula Book</a>
+                    <a class="nav-link" href="/coming-soon">Lab Testing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/coming-soon">Software</a>
+                    <a class="nav-link" href="/formulas">Formula Book</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/coming-soon">Gallery</a>
+                    <a class="nav-link" href="/coming-soon">Software</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/about">About Us</a>
+                    <a class="nav-link" href="/coming-soon">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/contact">Contact</a>
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ms-auto">
                 @auth
+                    <li class="nav-item" style="display: flex; align-items: center; justify-content: center;">
+                        <a class="nav-link" href="{{ route('student.dashboard') }}">Student Portal</a>
+                    </li>
+
                     <!-- Profile Dropdown -->
                     <li class="nav-item dropdown">
                         <a

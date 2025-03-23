@@ -10,4 +10,8 @@ class AdminHomeController extends Controller
     {
         return view('admin.home');
     }
+    public function courseManagement()
+    {
+        return view('admin.course_management.index');
+    }
 }
