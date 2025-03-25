@@ -36,9 +36,9 @@
                 <td>{{ $course->apply_option ? 'Yes' : 'No' }}</td>
                 <td>
                     @if($course->courseable_type === \App\Models\CourseSession::class)
-                        Session (ID: {{ $course->courseable_id }})
+                        Session: {{ optional($course->courseable)->name ?? 'N/A' }}
                     @else
-                        Batch (ID: {{ $course->courseable_id }})
+                        Batch: {{ optional($course->courseable)->name ?? 'N/A' }}
                     @endif
                 </td>
                 <td>
