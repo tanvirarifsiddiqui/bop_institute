@@ -20,7 +20,6 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $course->name }}</h5>
-{{--                                                <p class="card-text">{{ $course->description }}</p>--}}
                                                 <table class="table table-sm table-borderless">
                                                     <tr>
                                                         <th>Course Code:</th>
@@ -44,7 +43,8 @@
                                                             @if($course->courseable_type === 'App\\Models\\CourseSession')
                                                                 Session: {{ $course->courseable->name }}
                                                             @else
-                                                                Batch: {{ $course->courseable->name }}
+                                                                Batch: {{ $course->courseable->name }} <br>
+                                                                Start Date: {{ \Carbon\Carbon::parse($course->courseable->start_date)->format('d M Y') }}
                                                             @endif
                                                         </td>
                                                     </tr>
@@ -75,10 +75,6 @@
                                                                 <th>Course Code</th>
                                                                 <td>{{ $course->course_code }}</td>
                                                             </tr>
-{{--                                                            <tr>--}}
-{{--                                                                <th>Description</th>--}}
-{{--                                                                <td>{{ $course->description }}</td>--}}
-{{--                                                            </tr>--}}
                                                             <tr>
                                                                 <th>Duration</th>
                                                                 <td>{{ $course->duration }}</td>
@@ -97,7 +93,8 @@
                                                                     @if($course->courseable_type === 'App\\Models\\CourseSession')
                                                                         Session: {{ $course->courseable->name }}
                                                                     @else
-                                                                        Batch: {{ $course->courseable->name }}
+                                                                        Batch: {{ $course->courseable->name }} <br>
+                                                                        Start Date: {{ \Carbon\Carbon::parse($course->courseable->start_date)->format('d M Y') }}
                                                                     @endif
                                                                 </td>
                                                             </tr>

@@ -111,4 +111,12 @@ class CourseController extends Controller
         return redirect()->route('admin.course_management.courses.index')
             ->with('success', 'Course deleted successfully.');
     }
+
+    public function students(Course $course)
+    {
+        // Retrieve enrollments with associated student profile and user information.
+        $enrollments = $course->enrollments()->with('studentProfile.user')->get();
+
+        return view('admin.course_management.courses.students', compact('course', 'enrollments'));
+    }
 }

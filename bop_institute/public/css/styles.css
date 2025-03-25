@@ -68,7 +68,7 @@ footer {
 /* Main Content */
 .main-content {
     margin-top: 40px;
-    margin-left: 250px; /* Space for sidebar */
+    /*margin-left: 250px; !* Space for sidebar *!*/
     padding: 10px;
     transition: margin-left 0.3s ease-in-out; /* Smooth transition */
 }

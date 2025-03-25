@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Models\CourseApplication;
 use App\Models\Enrollment;
@@ -20,7 +21,8 @@ class BulkEnrollmentController extends Controller
     public function index()
     {
         $approvedApplications = CourseApplication::where('status', 'approved')->with('studentProfile.user', 'course')->get();
-        return view('admin.bulk_enrollment.index', compact('approvedApplications'));
+        $courses = Course::with(['enrollments.studentProfile.user'])->get();
+        return view('admin.bulk_enrollment.index', compact('approvedApplications', 'courses'));
     }
 
     /**

@@ -80,9 +80,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/formulas">Formula Book</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/coming-soon">Software</a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="/coming-soon">Software</a>--}}
+{{--                </li>--}}
                 <li class="nav-item">
                     <a class="nav-link" href="/coming-soon">Gallery</a>
                 </li>
@@ -111,7 +111,7 @@
                             aria-expanded="false"
                         >
                             <img
-                                src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset(Auth::user()->gender == 'male' ? 'images/profile_pic/male.png' : 'images/profile_pic/female.png') }}"
+                                src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset(Auth::user()->gender == 'male' ? 'images/profile_pic/male.png' : 'images/profile_pic/female.jpg') }}"
                                 alt="Profile Picture"
                                 class="rounded-circle"
                                 style="width: 35px; height: 35px; object-fit: cover; margin-right: 5px;"
@@ -122,13 +122,13 @@
                             <li>
                                 <h6 class="dropdown-header">Hello, {{ Auth::user()->name }}!</h6>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="/profile">Profile</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/settings">Settings</a>
-                            </li>
-                            <li>
+{{--                            <li>--}}
+{{--                                <a class="dropdown-item" href="/profile">Profile</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a class="dropdown-item" href="/settings">Settings</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>

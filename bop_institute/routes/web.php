@@ -87,6 +87,10 @@ Route::prefix('admin/course-management')
 
         // Course routes
         Route::resource('courses', \App\Http\Controllers\Admin\CourseManagement\CourseController::class);
+
+        // New route for course-wise student enrollment list
+        Route::get('courses/{course}/students', [\App\Http\Controllers\Admin\CourseManagement\CourseController::class, 'students'])
+            ->name('courses.students');
     });
 
 // Admin Routes

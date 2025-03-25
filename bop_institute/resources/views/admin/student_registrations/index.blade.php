@@ -40,7 +40,7 @@
     <div class="container mt-4">
         <h1>Student Registrations & Registered Students</h1>
         {{-- Bootstrap Tab Layout --}}
-        <ul class="nav nav-tabs" id="studentTab" role="tablist">
+        <ul class="nav nav-tabs justify-content-center" id="studentTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="registrations-tab" data-bs-toggle="tab" data-bs-target="#registrations" type="button" role="tab" aria-controls="registrations" aria-selected="true">
                     Pending Registrations

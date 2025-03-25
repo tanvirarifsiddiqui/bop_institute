@@ -42,6 +42,8 @@
                     @endif
                 </td>
                 <td>
+                    <!-- New Students button -->
+                    <a href="{{ route('admin.course_management.courses.students', $course) }}" class="btn btn-sm btn-info">Students</a>
                     <a href="{{ route('admin.course_management.courses.edit', $course) }}" class="btn btn-sm btn-warning">Edit</a>
                     <form action="{{ route('admin.course_management.courses.destroy', $course) }}" method="POST" style="display:inline-block;">
                         @csrf

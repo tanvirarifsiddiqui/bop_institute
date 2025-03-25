@@ -27,4 +27,23 @@ class Course extends Model
     {
         return $this->morphTo();
     }
+
+    // Relationship to access enrollments for this course.
+    public function enrollments()
+    {
+        return $this->hasMany(\App\Models\Enrollment::class, 'course_id', 'id');
+    }
+
+    // Relationship to directly access enrolled students via enrollments
+    public function students()
+    {
+        return $this->hasManyThrough(
+            \App\Models\StudentProfile::class,
+            \App\Models\Enrollment::class,
+            'course_id',          // Foreign key on Enrollment table...
+            'id',                 // Foreign key on StudentProfile table (assuming primary key is `id`)
+            'id',                 // Local key on Course table...
+            'student_profile_id'  // Local key on Enrollment table linking to StudentProfile
+        );
+    }
 }
